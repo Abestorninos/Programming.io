@@ -1,0 +1,159 @@
+:root {
+  --primary-color: rgb(67, 174, 236);
+  --background-color: rgb(20, 19, 19);
+  --text-color: white;
+  --linear-design: rgb(221, 212, 212);
+}
+
+.hsi {
+  color: var(--text-color);
+  text-shadow: 0 0 5px var(--primary-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.home-section-design1 {
+  position: absolute;
+  width: 30vh;
+  height: 80vh;
+  filter: blur(100px);
+  opacity: 0.20;
+  margin-left: auto;
+  z-index: 0;
+  background: linear-gradient(to right, var(--linear-design) 20%, rgb(20, 19, 19)100%);
+}
+
+.home-section-design2 {
+  display: flex;
+  position: absolute;
+  margin-left: 50%;
+  width: 60vh;
+  filter: blur(100px);
+  opacity: 0.20;
+  height: 35vh;
+  z-index: 2;
+  background: linear-gradient(to left, var(--linear-design) 20%, rgb(20, 19, 19)100%);
+}
+
+main .home-section {
+  width: 100%;
+  height: 100vh;
+
+}
+
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+.home-section-body {
+  cursor: default;
+  margin-left: 6%;
+}
+
+.home-section h2 {
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+}
+
+.home-section p {
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+
+.btn-contact.active.home-section-name.active::before,
+.btn-contact,
+.btn-contact.active::before {
+  animation: fade-in-blur ease-in-out 1s;
+}
+.Introduction.active,.basic-info.active{
+  animation: slide-left-blur ease-in-out 1s;
+}
+
+.home-section-name {
+  color: var(--text-color);
+  text-shadow: 0 0 5px var(--primary-color);
+}
+
+.home-section-name::before {
+  content: "|";
+  color: var(--text-color);
+  position: absolute;
+  width: 100%;
+  height: 7%;
+  background-color: var(--background-color);
+  animation: span-type-writer 7s steps(20) infinite;
+}
+
+.home-section-name.active {
+  animation: fade-in ease-in-out 1s;
+}
+
+.home-section img {
+  margin-right: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 40px black;
+}
+
+.home-section img.active {
+  animation-name: fade-in-blur;
+  animation-timing-function: ease;
+  animation-duration: 1.2s;
+}
+
+.home-section img:hover {
+  filter: drop-shadow(0 0 20px rgb(83, 81, 81));
+  transition: filter 0.3s ease-in;
+  
+}
+
+.home-section button {
+  position: relative;
+  margin-top: 20px;
+  width: 200px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 13px;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 20px black;
+}
+
+.btn-contact:hover {
+  color: var(--background-color);
+  /* transform: scale(1.1); */
+  transition: all 200ms ease-in;
+}
+
+.btn-contact::before {
+  position: absolute;
+  content: "";
+  border-radius: 13px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--text-color);
+  transition: transform 200ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 0;
+}
+
+.btn-contact:hover::before,
+.btn-contact:focus::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "Contact me";
+  transform: scaleX(1);
+  color: var(--background-color);
+  /*box-shadow: 1px 1px 20px 0px var(--primary-color);*/
+  transition: content 10ms forward;
+}
